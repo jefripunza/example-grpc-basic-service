@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  grpc-basic-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 4081:4081
+networks:
+  default:
+    name: nginx_default
+    external: true

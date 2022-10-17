@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "main-service/proto";
+
+message RequestBasic {
+    int64 a = 1;
+    int64 b = 2;
+}
+
+message ResponseBasic {
+    int64 result = 1;
+}
+
+service BasicService {
+    rpc Add(RequestBasic) returns (ResponseBasic);
+    rpc Multiply(RequestBasic) returns (ResponseBasic);
+}
